@@ -80,7 +80,8 @@ def text_to_speech(input_language, output_language, text):
     return filename, trans_text
 
 # 🎵 BOTÓN PARA CONVERTIR TEXTO A AUDIO
-if text and st.button("🎼 Convertir a Audio"):
+convertir_audio = st.button("🎼 Convertir a Audio")
+if text and convertir_audio:
     result_audio, output_text = text_to_speech(input_language, output_language, text)
     audio_file = open(result_audio, "rb")
     audio_bytes = audio_file.read()
