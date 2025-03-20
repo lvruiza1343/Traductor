@@ -16,3 +16,5 @@ xyzservices >=2021.09.1
 bokeh==2.4.3
 #bokeh==3.4.0
 Streamlit-bokeh-events
+speechrecognition
+
