@@ -14,7 +14,7 @@ st.title("🌟 Traductor de Voz en Tiempo Real 🎤")
 st.markdown("Convierte tu voz en texto y tradúcelo a diferentes idiomas. ¡Presiona el botón y comienza a hablar!")
 
 # 📸 CARGAR IMAGEN 
-image = Image.open("nueva_imagen.jpg")
+image = Image.open("lenguaje.jpg")
 st.image(image, width=300)
 
 # 📌 SIDEBAR
