@@ -10,10 +10,10 @@ from gtts import gTTS
 from googletrans import Translator
 
 # Configuración de la página
-st.set_page_config(page_title="Traductor de Voz", page_icon="🎤")
+st.set_page_config(page_title="Traductor de Voz", page_icon="")
 
 # Imagen de inicio
-image = Image.open('lenguaje.jpg')  # Reemplaza con tu imagen
+image = Image.open('microphone.jpg')  # Reemplaza con tu imagen
 st.image(image, width=300)
 
 # Barra lateral con instrucciones
@@ -22,29 +22,33 @@ with st.sidebar:
     st.write("Presiona el botón 'Escuchar' y habla cuando escuches la señal. Luego, selecciona los idiomas.")
 
 # Título y subtítulo
-st.title("Traductor de Voz 🎤")
+st.title("Traductor de Voz ")
 st.markdown("### ¡Di algo y lo traduciré!")
 
 # Botón de escuchar
-stt_button = Button(label="Escuchar 🎤", width=300, height=50, button_type="primary")
+stt_button = Button(label="Escuchar ", width=300, height=50, button_type="primary")
+
+# JavaScript modificado para iniciar el reconocimiento de voz correctamente
 stt_button.js_on_event("button_click", CustomJS(code="""
-    var recognition = new webkitSpeechRecognition();
-    recognition.continuous = false;
-    recognition.interimResults = false;
-    recognition.lang = 'es-ES'; //idioma de reconocimiento inicial
-    recognition.onresult = function (e) {
-        var value = "";
-        for (var i = e.resultIndex; i < e.results.length; ++i) {
-            if (e.results[i].isFinal) {
-                value += e.results[i][0].transcript;
+    setTimeout(function(){
+        var recognition = new webkitSpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.lang = 'es-ES'; //idioma de reconocimiento inicial
+        recognition.onresult = function (e) {
+            var value = "";
+            for (var i = e.resultIndex; i < e.results.length; ++i) {
+                if (e.results[i].isFinal) {
+                    value += e.results[i][0].transcript;
+                }
+            }
+            if ( value != "") {
+                document.dispatchEvent(new CustomEvent("GET_TEXT", {detail: value}));
             }
         }
-        if ( value != "") {
-            document.dispatchEvent(new CustomEvent("GET_TEXT", {detail: value}));
-        }
-    }
-    recognition.start();
-    """))
+        recognition.start();
+    }, 500); // Espera 500 milisegundos antes de iniciar el reconocimiento
+"""))
 
 # Evento de reconocimiento de voz
 result = streamlit_bokeh_events(
