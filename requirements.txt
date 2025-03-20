@@ -1,9 +1,6 @@
 streamlit
-gtts==2.2.2
-googletrans==4.0.0-rc1
-pandas
-pillow
-speechrecognition
-pyaudio
-
+bokeh
+Pillow
+gTTS
+googletrans==4.0.0rc1
 
