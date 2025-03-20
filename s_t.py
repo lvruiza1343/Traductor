@@ -13,7 +13,7 @@ from googletrans import Translator
 st.set_page_config(page_title="Traductor de Voz", page_icon="")
 
 # Imagen de inicio
-image = Image.open('microphone.jpg')  # Reemplaza con tu imagen
+image = Image.open('lenguaje.jpg')  # Reemplaza con tu imagen
 st.image(image, width=300)
 
 # Barra lateral con instrucciones
