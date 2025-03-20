@@ -41,6 +41,9 @@ st.markdown(
 
 st.markdown("### 🎧 Presiona el botón y habla:")
 
+# Inicializamos la variable text
+text = ""
+
 if st.button("🎤 Grabar Voz"):
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
@@ -51,10 +54,8 @@ if st.button("🎤 Grabar Voz"):
             st.success(f"✅ **Texto detectado:** {text}")
         except sr.UnknownValueError:
             st.error("⚠️ No se pudo reconocer el audio. Intenta nuevamente.")
-            text = ""
         except sr.RequestError:
             st.error("⚠️ Error de conexión con el servicio de reconocimiento de voz.")
-            text = ""
 
 # 📌 SELECCIÓN DE IDIOMA
 idiomas = {
@@ -80,8 +81,7 @@ def text_to_speech(input_language, output_language, text):
     return filename, trans_text
 
 # 🎵 BOTÓN PARA CONVERTIR TEXTO A AUDIO
-convertir_audio = st.button("🎼 Convertir a Audio")
-if text and convertir_audio:
+if text and st.button("🎼 Convertir a Audio"):
     result_audio, output_text = text_to_speech(input_language, output_language, text)
     audio_file = open(result_audio, "rb")
     audio_bytes = audio_file.read()
