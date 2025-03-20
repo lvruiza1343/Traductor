@@ -3,4 +3,4 @@ bokeh
 Pillow
 gTTS
 googletrans==4.0.0rc1
-
+pip install streamlit_bokeh_events
