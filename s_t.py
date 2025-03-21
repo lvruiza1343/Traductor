@@ -9,34 +9,39 @@ import glob
 from gtts import gTTS
 from googletrans import Translator
 
-# Estilo CSS para el fondo #1f104f
+# Estilo CSS para centrar elementos
 st.markdown(
     """
     <style>
-    body {
-        background-color: #1f104f;
-        color: white; /* Opcional: cambia el color del texto para que sea legible */
+    .centered {
+        text-align: center;
+    }
+    .centered-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     </style>
     """,
     unsafe_allow_html=True,
 )
 
-st.title("CONVERTIDOR DE IDIOMAS")
-st.subheader("¡Dile al mundo lo que piensas!")
+st.markdown("<h1 class='centered'>CONVERSOR DE IDIOMAS</h1>", unsafe_allow_html=True)
+st.markdown("<h3 class='centered'>¡Dile al mundo lo que piensas!</h3>", unsafe_allow_html=True)
 
 imagen = Image.open('lenguaje.jpg')  # Asegúrate que la imagen esté en el mismo directorio.
 
-st.image(imagen, width=300)
+st.image(imagen, width=300, use_column_width=False, output_format='auto', caption=None, class_='centered-image')
+
 with st.sidebar:
     st.subheader("Asistente de Idiomas")
     st.write("Pulsa el botón, espera la señal auditiva, "
              "expresa tu mensaje y selecciona el idioma "
              "de destino.")
 
-st.write("¡Habla ahora y traduce rapidamente!")
+st.markdown("<p class='centered'>¡Habla ahora y traduce al instante!</p>", unsafe_allow_html=True)
 
-boton_escuchar = Button(label=" Activar Micrófono ️", width=300, height=50)
+boton_escuchar = Button(label=" Activar Micrófono ", width=300, height=50)
 
 boton_escuchar.js_on_event("button_click", CustomJS(code="""
     setTimeout(function(){
