@@ -9,7 +9,20 @@ import glob
 from gtts import gTTS
 from googletrans import Translator
 
-st.title("CONVERSOR DE IDIOMAS")
+# Estilo CSS para el fondo #1f104f
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #1f104f;
+        color: white; /* Opcional: cambia el color del texto para que sea legible */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+st.title("CONVERTIDOR DE IDIOMAS")
 st.subheader("¡Dile al mundo lo que piensas!")
 
 imagen = Image.open('OIG7.jpg')  # Asegúrate que la imagen esté en el mismo directorio.
@@ -21,7 +34,7 @@ with st.sidebar:
              "expresa tu mensaje y selecciona el idioma "
              "de destino.")
 
-st.write("¡Habla ahora y traduce al instante!")
+st.write("¡Habla ahora y traduce rapidamente!")
 
 boton_escuchar = Button(label=" Activar Micrófono ️", width=300, height=50)
 
