@@ -29,9 +29,8 @@ st.markdown(
 st.markdown("<h1 class='centered'>CONVERSOR DE IDIOMAS</h1>", unsafe_allow_html=True)
 st.markdown("<h3 class='centered'>¡Dile al mundo lo que piensas!</h3>", unsafe_allow_html=True)
 
-imagen = Image.open('lenguaje.jpg')  # Asegúrate que la imagen esté en el mismo directorio.
+imagen = Image.open('lenguaje.jpg')  
 
-st.image(imagen, width=300, use_column_width=False, output_format='auto', caption=None, class_='centered-image')
 
 with st.sidebar:
     st.subheader("Asistente de Idiomas")
