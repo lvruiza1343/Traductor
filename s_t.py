@@ -9,7 +9,7 @@ import glob
 from gtts import gTTS
 from googletrans import Translator
 
-imagen = Image.open('lenguaje.jpg')
+imagen = Image.open('mundo.jpg')
 # Estilo CSS para centrar elementos
 st.markdown(
     """
