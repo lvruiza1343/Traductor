@@ -9,9 +9,6 @@ import glob
 from gtts import gTTS
 from googletrans import Translator
 
-st.title("CONVERSOR DE IDIOMAS")
-st.subheader("¡Dile al mundo lo que piensas!")
-
 imagen = Image.open('lenguaje.jpg')
 # Estilo CSS para centrar elementos
 st.markdown(
