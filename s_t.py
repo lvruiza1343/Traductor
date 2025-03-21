@@ -29,11 +29,14 @@ st.markdown(
 st.markdown("<h1 class='centered'>CONVERSOR DE IDIOMAS</h1>", unsafe_allow_html=True)
 st.markdown("<h3 class='centered'>¡Dile al mundo lo que piensas!</h3>", unsafe_allow_html=True)
 
-imagen = Image.open('lenguaje.jpg')  
+try:  # Intenta cargar la imagen
+    imagen = Image.open('lenguaje.jpg')
+    st.image(imagen, width=300, use_column_width=False, output_format='auto', caption=None, class_='centered-image')
 except FileNotFoundError:
-    print("Error: La imagen no se encontró.")
+    st.error("Error: La imagen 'OIG7.jpg' no se encontró.")
 except Exception as e:
-    print(f"Error al cargar la imagen: {e}")
+    st.error(f"Error al cargar la imagen: {e}")
+
 
 with st.sidebar:
     st.subheader("Asistente de Idiomas")
