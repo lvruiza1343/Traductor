@@ -30,7 +30,7 @@ st.markdown(
 st.markdown("<h1 class='centered'>CONVERTIDOR DE IDIOMAS</h1>", unsafe_allow_html=True)
 st.markdown("<h3 class='centered'>¡Comunicate fácilmente!</h3>", unsafe_allow_html=True)
 
-st.image(imagen, width=300)
+st.image(imagen, width=600)
 
 
 with st.sidebar:
