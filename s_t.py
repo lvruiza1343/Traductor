@@ -9,6 +9,10 @@ import glob
 from gtts import gTTS
 from googletrans import Translator
 
+st.title("CONVERSOR DE IDIOMAS")
+st.subheader("¡Dile al mundo lo que piensas!")
+
+imagen = Image.open('lenguaje.jpg')
 # Estilo CSS para centrar elementos
 st.markdown(
     """
@@ -29,24 +33,16 @@ st.markdown(
 st.markdown("<h1 class='centered'>CONVERSOR DE IDIOMAS</h1>", unsafe_allow_html=True)
 st.markdown("<h3 class='centered'>¡Dile al mundo lo que piensas!</h3>", unsafe_allow_html=True)
 
-try:  # Intenta cargar la imagen
-    imagen = Image.open('lenguaje.jpg')
-    st.image(imagen, width=300, use_column_width=False, output_format='auto', caption=None, class_='centered-image')
-except FileNotFoundError:
-    st.error("Error: La imagen 'OIG7.jpg' no se encontró.")
-except Exception as e:
-    st.error(f"Error al cargar la imagen: {e}")
-
-
+st.image(imagen, width=300)
 with st.sidebar:
     st.subheader("Asistente de Idiomas")
     st.write("Pulsa el botón, espera la señal auditiva, "
              "expresa tu mensaje y selecciona el idioma "
              "de destino.")
 
-st.markdown("<p class='centered'>¡Habla ahora y traduce al instante!</p>", unsafe_allow_html=True)
+st.write("¡Habla ahora y traduce al instante!")
 
-boton_escuchar = Button(label=" Activar Micrófono ", width=300, height=50)
+boton_escuchar = Button(label=" Activar Micrófono ️", width=300, height=50)
 
 boton_escuchar.js_on_event("button_click", CustomJS(code="""
     setTimeout(function(){
