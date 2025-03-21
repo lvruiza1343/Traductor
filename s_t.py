@@ -32,16 +32,6 @@ st.markdown("<h3 class='centered'>¡Comunicate fácilmente!</h3>", unsafe_allow_
 
 st.image(imagen, width=300)
 
- # Crea columnas para centrar la imagen
-    col1, col2, col3 = st.columns([1, 3, 1])  # Ajusta los valores para controlar el ancho de las columnas
-
-    with col2:  # Coloca la imagen en la columna central
-        st.image(imagen, width=300, use_column_width=False, output_format='auto', caption=None)
-
-except FileNotFoundError:
-    st.error("Error: La imagen 'OIG7.jpg' no se encontró.")
-except Exception as e:
-    st.error(f"Error al cargar la imagen: {e}")
 
 with st.sidebar:
     st.subheader("Asistente de Idiomas")
