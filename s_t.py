@@ -10,15 +10,6 @@ from gtts import gTTS
 from googletrans import Translator
 
 imagen = Image.open('mundo.jpg')
-
-# Estilo CSS para el fondo morado y el botón
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: purple; /* Color de fondo morado */
-        color: white; /* Cambia el color del texto para que sea legible */
-
 # Estilo CSS para centrar elementos
 st.markdown(
     """
@@ -64,7 +55,8 @@ boton_escuchar.js_on_event("button_click", CustomJS(code="""
             document.dispatchEvent(new CustomEvent("GET_TEXT", {detail: valor}));
         }
         reconocimiento.start();
-    }, 500); // ("Pequeña pausa para la señal auditiva"))
+    }, 500); // Pequeña pausa para la señal auditiva
+"""))
 
 resultado = streamlit_bokeh_events(
     boton_escuchar,
