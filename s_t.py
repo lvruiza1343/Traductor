@@ -30,7 +30,10 @@ st.markdown("<h1 class='centered'>CONVERSOR DE IDIOMAS</h1>", unsafe_allow_html=
 st.markdown("<h3 class='centered'>¡Dile al mundo lo que piensas!</h3>", unsafe_allow_html=True)
 
 imagen = Image.open('lenguaje.jpg')  
-
+except FileNotFoundError:
+    print("Error: La imagen no se encontró.")
+except Exception as e:
+    print(f"Error al cargar la imagen: {e}")
 
 with st.sidebar:
     st.subheader("Asistente de Idiomas")
