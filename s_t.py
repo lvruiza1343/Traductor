@@ -25,7 +25,7 @@ st.markdown(
 st.title("CONVERTIDOR DE IDIOMAS")
 st.subheader("¡Dile al mundo lo que piensas!")
 
-imagen = Image.open('OIG7.jpg')  # Asegúrate que la imagen esté en el mismo directorio.
+imagen = Image.open('lenguaje.jpg')  # Asegúrate que la imagen esté en el mismo directorio.
 
 st.image(imagen, width=300)
 with st.sidebar:
