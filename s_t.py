@@ -10,6 +10,15 @@ from gtts import gTTS
 from googletrans import Translator
 
 imagen = Image.open('mundo.jpg')
+
+# Estilo CSS para el fondo morado y el botón
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: purple; /* Color de fondo morado */
+        color: white; /* Cambia el color del texto para que sea legible */
+
 # Estilo CSS para centrar elementos
 st.markdown(
     """
